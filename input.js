@@ -1,4 +1,6 @@
 const connect = require('./client');
+const { IP, PORT, keys } = require("./constants");
+
 let connection;
 
 const setupInput = function (conn) {
@@ -13,25 +15,25 @@ const setupInput = function (conn) {
 
 const handleUserInput = function (key) {
     switch (key) {
-      case "\u0003":
+      case keys.CTRLC:
         process.exit();
         break;
-      case "\u0077":
+      case keys.keyW:
         connection.write("Move: up");
         break;
-      case "\u0061":
+      case keys.keyA:
         connection.write("Move: left");
         break;
-      case "\u0073":
+      case keys.keyS:
         connection.write("Move: down");
         break;
-      case "\u0064":
+      case keys.keyD:
         connection.write("Move: right");
         break;
-      case "\u0065":
+      case keys.keyE:
         connection.write("Say: I am going to wiiiin! Argh!");
         break;
-      case "\u0071":
+      case keys.keyQ:
         connection.write("Say: Out of my waaay!");
         break;
       default:
