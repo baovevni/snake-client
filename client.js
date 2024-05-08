@@ -17,13 +17,3 @@ const connect = function () {
 };
 
 module.exports = connect;
-
-
-
-
-// setInterval(() => {
-//   conn.write("Move: up");
-// }, (50));
-// setTimeout(() => {
-//   conn.write("Move: right");
-// }, (100));
